@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Cafe Bar</title>
+    <meta name="description" content="Take a visual tour of Cafe Bar - our interior, drinks, food, and events.">
+    <link rel="icon" href="/public/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/public/logo-icon.svg" />
+    <link rel="shortcut icon" href="/public/favicon.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <img src="/public/logo.svg" alt="Cafe Bar" class="h-8 w-auto">
+                        <span class="text-2xl font-bold text-gray-900">Cafe Bar</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-gray-900 transition-colors">Home</a>
+                    <a href="menu.html" class="text-gray-700 hover:text-gray-900 transition-colors">Menu</a>
+                    <a href="about.html" class="text-gray-700 hover:text-gray-900 transition-colors">About</a>
+                    <a href="gallery.html" class="text-amber-600 font-medium">Gallery</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-gray-900 transition-colors">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-gray-900 p-2">
+                        <svg class="h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md">Home</a>
+                <a href="menu.html" class="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md">Menu</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md">About</a>
+                <a href="gallery.html" class="block px-3 py-2 text-amber-600 hover:bg-gray-50 rounded-md">Gallery</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 animate-fade-in-up">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">Gallery</h1>
+                <p class="text-lg text-gray-600">Take a visual tour of our cafe and what we have to offer</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button onclick="filterGallery('all')" class="category-btn px-6 py-2 rounded-full font-medium transition-colors bg-amber-600 text-white">All</button>
+                <button onclick="filterGallery('interior')" class="category-btn px-6 py-2 rounded-full font-medium transition-colors bg-white text-gray-700 hover:bg-gray-100">Interior</button>
+                <button onclick="filterGallery('food')" class="category-btn px-6 py-2 rounded-full font-medium transition-colors bg-white text-gray-700 hover:bg-gray-100">Food</button>
+                <button onclick="filterGallery('drinks')" class="category-btn px-6 py-2 rounded-full font-medium transition-colors bg-white text-gray-700 hover:bg-gray-100">Drinks</button>
+                <button onclick="filterGallery('events')" class="category-btn px-6 py-2 rounded-full font-medium transition-colors bg-white text-gray-700 hover:bg-gray-100">Events</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+                <!-- Gallery images will be populated here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4 hidden" onclick="closeLightbox()">
+        <div class="relative max-w-4xl max-h-full bg-white rounded-lg overflow-hidden" onclick="event.stopPropagation()">
+            <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-70 transition-colors z-10">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            
+            <div class="bg-white rounded-lg overflow-hidden">
+                <div class="aspect-video relative">
+                    <img id="lightbox-image" src="" alt="" class="w-full h-full object-contain">
+                </div>
+                <div class="p-6">
+                    <h3 id="lightbox-caption" class="text-2xl font-bold text-gray-900 mb-2"></h3>
+                    <p id="lightbox-category" class="text-gray-600 capitalize"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="/public/logo-icon.svg" alt="Cafe Bar" class="h-6 w-6">
+                        <h3 class="text-xl font-bold text-white">Cafe Bar</h3>
+                    </div>
+                    <p class="text-gray-400">Your favorite place for coffee and good vibes.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="menu.html" class="text-gray-400 hover:text-white transition-colors">Menu</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-white transition-colors">Gallery</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Opening Hours</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Monday - Friday: 7:00 AM - 8:00 PM</li>
+                        <li>Saturday: 8:00 AM - 9:00 PM</li>
+                        <li>Sunday: 8:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Cafe Bar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const galleryImages = [
+            { id: 1, caption: 'Modern coffee shop interior with comfortable seating', category: 'interior', image: '/public/images/gallery/interior-modern.jpg' },
+            { id: 2, caption: 'Cozy coffee shop seating area with natural lighting', category: 'interior', image: '/public/images/gallery/interior-cozy.jpg' },
+            { id: 3, caption: 'Professional barista making coffee with precision', category: 'events', image: '/public/images/gallery/barista-professional.jpg' },
+            { id: 4, caption: 'Coffee bean grinding process showing craftsmanship', category: 'drinks', image: '/public/images/gallery/coffee-process.jpg' },
+            { id: 5, caption: 'Beautiful latte art with heart design', category: 'drinks', image: '/public/images/gallery/latte-art.jpg' },
+            { id: 6, caption: 'Professional coffee equipment setup', category: 'drinks', image: '/public/images/gallery/equipment-setup.jpg' },
+            { id: 7, caption: 'Happy customers enjoying coffee and conversation', category: 'events', image: '/public/images/gallery/customers-enjoying.jpg' },
+            { id: 8, caption: 'Coffee shop exterior with outdoor seating area', category: 'interior', image: '/public/images/gallery/exterior.jpg' },
+            { id: 9, caption: 'Fresh pastries display case with variety', category: 'food', image: '/public/images/gallery/pastries-display.jpg' },
+            { id: 10, caption: 'Collection of different coffee cups and mugs', category: 'drinks', image: '/public/images/gallery/coffee-cups.jpg' },
+            { id: 11, caption: 'Morning light streaming through coffee shop windows', category: 'interior', image: '/public/images/gallery/morning-light.jpg' },
+            { id: 12, caption: 'Evening ambiance with warm lighting and candles', category: 'interior', image: '/public/images/gallery/evening-atmosphere.jpg' },
+            { id: 13, caption: 'Remote workers on laptops in coffee shop', category: 'events', image: '/public/images/gallery/remote-workers.jpg' },
+            { id: 14, caption: 'Friends meeting for coffee and conversation', category: 'events', image: '/public/images/gallery/friends-meeting.jpg' },
+            { id: 15, caption: 'Person reading book while enjoying coffee', category: 'events', image: '/public/images/gallery/reading-coffee.jpg' }
+        ];
+
+        function renderGallery(images) {
+            const grid = document.getElementById('gallery-grid');
+            grid.innerHTML = images.map((image, index) => `
+                <div class="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg animate-fade-in-up" style="animation-delay: ${index * 0.1}s" onclick="openLightbox(${image.id})">
+                    <div class="aspect-square relative">
+                        ${image.image ? `
+                            <img src="${image.image}" alt="${image.caption}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                        ` : `
+                            <div class="w-full h-full bg-gray-200 flex items-center justify-center">
+                                <div class="text-center">
+                                    <div class="text-4xl mb-2">
+                                        ${image.category === 'interior' ? '🏪' : 
+                                          image.category === 'food' ? '🍽️' : 
+                                          image.category === 'drinks' ? '☕' : '🎉'}
+                                    </div>
+                                    <p class="text-gray-600">Image ${image.id}</p>
+                                </div>
+                            </div>
+                        `}
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+                            <span class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">View</span>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <h3 class="font-semibold text-gray-900">${image.caption}</h3>
+                        <p class="text-sm text-gray-600 capitalize">${image.category}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterGallery(category) {
+            // Update button styles
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('bg-amber-600', 'text-white');
+                btn.classList.add('bg-white', 'text-gray-700');
+            });
+            event.target.classList.remove('bg-white', 'text-gray-700');
+            event.target.classList.add('bg-amber-600', 'text-white');
+
+            // Filter images
+            const filtered = category === 'all' ? galleryImages : galleryImages.filter(image => image.category === category);
+            renderGallery(filtered);
+        }
+
+        function openLightbox(imageId) {
+            const image = galleryImages.find(img => img.id === imageId);
+            if (image) {
+                document.getElementById('lightbox-image').src = image.image || '';
+                document.getElementById('lightbox-image').alt = image.caption;
+                document.getElementById('lightbox-caption').textContent = image.caption;
+                document.getElementById('lightbox-category').textContent = `Category: ${image.category}`;
+                document.getElementById('lightbox').classList.remove('hidden');
+            }
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+        }
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Initial render
+        renderGallery(galleryImages);
+
+        // Close lightbox on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<svg width="220" height="60" viewBox="0 0 220 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Coffee Cup -->
+  <g>
+    <path d="M20 20 L22 40 L38 40 L40 20 Z" fill="#8B4513" stroke="#2C1810" stroke-width="2"/>
+    <path d="M18 20 L42 20" stroke="#2C1810" stroke-width="2" stroke-linecap="round"/>
+    <path d="M38 28 Q45 28 45 33 Q45 38 38 38" fill="none" stroke="#2C1810" stroke-width="2"/>
+    
+    <!-- Coffee Steam -->
+    <path d="M25 15 Q23 10 25 5" fill="none" stroke="#D2691E" stroke-width="2" opacity="0.6"/>
+    <path d="M30 15 Q32 10 30 5" fill="none" stroke="#D2691E" stroke-width="2" opacity="0.6"/>
+    <path d="M35 15 Q33 10 35 5" fill="none" stroke="#D2691E" stroke-width="2" opacity="0.6"/>
+  </g>
+  
+  <!-- Cafe Bar Text -->
+  <text x="60" y="35" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="#2C1810">Cafe Bar</text>
+  
+  <!-- Tagline -->
+  <text x="60" y="48" font-family="Arial, sans-serif" font-size="10" fill="#8B4513" font-style="italic">Coffee & Community</text>
+</svg>

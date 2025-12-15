@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Cafe Bar</title>
+    <meta name="description" content="Explore our selection of premium coffee, tea, food, and desserts at Cafe Bar.">
+    <link rel="icon" href="/public/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/public/logo-icon.svg" />
+    <link rel="shortcut icon" href="/public/favicon.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <img src="/public/logo.svg" alt="Cafe Bar" class="h-8 w-auto">
+                        <span class="text-2xl font-bold text-gray-900">Cafe Bar</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-gray-900 transition-colors">Home</a>
+                    <a href="menu.html" class="text-amber-600 font-medium">Menu</a>
+                    <a href="about.html" class="text-gray-700 hover:text-gray-900 transition-colors">About</a>
+                    <a href="gallery.html" class="text-gray-700 hover:text-gray-900 transition-colors">Gallery</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-gray-900 transition-colors">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-gray-900 p-2">
+                        <svg class="h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md">Home</a>
+                <a href="menu.html" class="block px-3 py-2 text-amber-600 hover:bg-gray-50 rounded-md">Menu</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md">About</a>
+                <a href="gallery.html" class="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md">Gallery</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">Our Menu</h1>
+                <p class="text-lg text-gray-600">
+                    Explore our selection of premium coffee, tea, food, and desserts
+                </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button onclick="filterMenu('all')" class="category-btn px-6 py-2 rounded-full font-medium transition-colors bg-amber-600 text-white">All</button>
+                <button onclick="filterMenu('coffee')" class="category-btn px-6 py-2 rounded-full font-medium transition-colors bg-white text-gray-700 hover:bg-gray-100">Coffee</button>
+                <button onclick="filterMenu('tea')" class="category-btn px-6 py-2 rounded-full font-medium transition-colors bg-white text-gray-700 hover:bg-gray-100">Tea</button>
+                <button onclick="filterMenu('food')" class="category-btn px-6 py-2 rounded-full font-medium transition-colors bg-white text-gray-700 hover:bg-gray-100">Food</button>
+                <button onclick="filterMenu('desserts')" class="category-btn px-6 py-2 rounded-full font-medium transition-colors bg-white text-gray-700 hover:bg-gray-100">Desserts</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="menu-grid">
+                <!-- Menu items will be populated here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="/public/logo-icon.svg" alt="Cafe Bar" class="h-6 w-6">
+                        <h3 class="text-xl font-bold text-white">Cafe Bar</h3>
+                    </div>
+                    <p class="text-gray-400">Your favorite place for coffee and good vibes.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="menu.html" class="text-gray-400 hover:text-white transition-colors">Menu</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-white transition-colors">Gallery</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Opening Hours</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Monday - Friday: 7:00 AM - 8:00 PM</li>
+                        <li>Saturday: 8:00 AM - 9:00 PM</li>
+                        <li>Sunday: 8:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Cafe Bar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuItems = [
+            {
+                id: 1,
+                name: 'Espresso',
+                description: 'Rich, bold espresso shot with perfect crema from premium Italian beans',
+                price: 2.50,
+                category: 'coffee',
+                available: true,
+                image: '/public/images/menu/espresso-professional.jpg'
+            },
+            {
+                id: 2,
+                name: 'Cappuccino',
+                description: 'Espresso with velvety steamed milk foam and beautiful latte art',
+                price: 4.00,
+                category: 'coffee',
+                available: true,
+                image: '/public/images/menu/cappuccino-art.jpg'
+            },
+            {
+                id: 3,
+                name: 'Latte',
+                description: 'Smooth espresso with perfectly steamed milk and creamy texture',
+                price: 4.50,
+                category: 'coffee',
+                available: true,
+                image: '/public/images/menu/latte-creamy.jpg'
+            },
+            {
+                id: 4,
+                name: 'Organic Green Tea',
+                description: 'Premium organic green tea leaves sourced from sustainable farms',
+                price: 3.00,
+                category: 'tea',
+                available: true,
+                image: '/public/images/menu/green-tea-organic.jpg'
+            },
+            {
+                id: 5,
+                name: 'Gourmet Club Sandwich',
+                description: 'Artisan sandwich with fresh vegetables, premium turkey, and whole grain bread',
+                price: 8.00,
+                category: 'food',
+                available: true,
+                image: '/public/images/menu/sandwich-gourmet.jpg'
+            },
+            {
+                id: 6,
+                name: 'Triple Chocolate Cake',
+                description: 'Decadent triple chocolate cake with rich ganache and chocolate shavings',
+                price: 5.00,
+                category: 'desserts',
+                available: true,
+                image: '/public/images/menu/chocolate-cake.jpg'
+            },
+            {
+                id: 7,
+                name: 'French Croissant',
+                description: 'Freshly baked buttery croissant with golden flaky layers',
+                price: 3.50,
+                category: 'desserts',
+                available: true,
+                image: '/public/images/menu/croissant-fresh.jpg'
+            },
+            {
+                id: 8,
+                name: 'Iced Vanilla Latte',
+                description: 'Refreshing cold brew coffee over ice with vanilla syrup and whipped cream',
+                price: 4.25,
+                category: 'coffee',
+                available: true,
+                image: '/public/images/menu/iced-coffee-refreshing.jpg'
+            },
+            {
+                id: 9,
+                name: 'Artisan Blueberry Muffin',
+                description: 'Fresh blueberry muffin with lemon glaze and sugar crumble topping',
+                price: 3.75,
+                category: 'desserts',
+                available: true,
+                image: '/public/images/menu/muffin-blueberry.jpg'
+            },
+            {
+                id: 10,
+                name: 'New York Bagel',
+                description: 'Authentic NY style bagel with cream cheese, capers, and red onion',
+                price: 4.50,
+                category: 'food',
+                available: true,
+                image: '/public/images/menu/bagel-creamcheese.jpg'
+            },
+            {
+                id: 11,
+                name: 'Avocado Toast',
+                description: 'Toasted sourdough with smashed avocado, poached egg, and chili flakes',
+                price: 7.50,
+                category: 'food',
+                available: true,
+                image: '/public/images/menu/avocado-toast.jpg'
+            },
+            {
+                id: 12,
+                name: 'Spiced Chai Latte',
+                description: 'Traditional Indian chai with steamed milk and cinnamon stick',
+                price: 4.00,
+                category: 'tea',
+                available: true,
+                image: '/public/images/menu/chai-latte.jpg'
+            }
+        ];
+
+        function renderMenu(items) {
+            const grid = document.getElementById('menu-grid');
+            grid.innerHTML = items.map(item => `
+                <div class="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="p-6">
+                        <div class="mb-4 h-32 bg-gray-200 rounded-lg overflow-hidden">
+                            ${item.image ? `
+                                <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                            ` : `
+                                <div class="w-full h-full bg-gray-200 flex items-center justify-center">
+                                    <span class="text-4xl">
+                                        ${item.category === 'coffee' ? '☕' : 
+                                          item.category === 'tea' ? '🍵' : 
+                                          item.category === 'food' ? '🥪' : '🍰'}
+                                    </span>
+                                </div>
+                            `}
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">${item.name}</h3>
+                        <p class="text-gray-600 mb-4">${item.description}</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-amber-600">$${item.price.toFixed(2)}</span>
+                            <span class="px-3 py-1 rounded-full text-sm ${item.available ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}">
+                                ${item.available ? 'Available' : 'Out of Stock'}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterMenu(category) {
+            // Update button styles
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('bg-amber-600', 'text-white');
+                btn.classList.add('bg-white', 'text-gray-700');
+            });
+            event.target.classList.remove('bg-white', 'text-gray-700');
+            event.target.classList.add('bg-amber-600', 'text-white');
+
+            // Filter items
+            const filtered = category === 'all' ? menuItems : menuItems.filter(item => item.category === category);
+            renderMenu(filtered);
+        }
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Initial render
+        renderMenu(menuItems);
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Coffee Cup -->
+  <path d="M30 20 L32 45 L48 45 L50 20 Z" fill="#8B4513" stroke="#2C1810" stroke-width="2"/>
+  <path d="M28 20 L52 20" stroke="#2C1810" stroke-width="2" stroke-linecap="round"/>
+  <path d="M48 30 Q55 30 55 35 Q55 40 48 40" fill="none" stroke="#2C1810" stroke-width="2"/>
+  
+  <!-- Coffee Steam -->
+  <path d="M35 15 Q33 10 35 5" fill="none" stroke="#D2691E" stroke-width="2" opacity="0.6"/>
+  <path d="M40 15 Q42 10 40 5" fill="none" stroke="#D2691E" stroke-width="2" opacity="0.6"/>
+  <path d="M45 15 Q43 10 45 5" fill="none" stroke="#D2691E" stroke-width="2" opacity="0.6"/>
+  
+  <!-- Cafe Bar Text -->
+  <text x="70" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2C1810">Cafe Bar</text>
+</svg>

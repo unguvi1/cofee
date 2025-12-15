@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Cafe Bar</title>
+    <meta name="description" content="Contact Cafe Bar - visit us, call us, or send us a message. We'd love to hear from you.">
+    <link rel="icon" href="/public/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/public/logo-icon.svg" />
+    <link rel="shortcut icon" href="/public/favicon.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <img src="/public/logo.svg" alt="Cafe Bar" class="h-8 w-auto">
+                        <span class="text-2xl font-bold text-gray-900">Cafe Bar</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-gray-900 transition-colors">Home</a>
+                    <a href="menu.html" class="text-gray-700 hover:text-gray-900 transition-colors">Menu</a>
+                    <a href="about.html" class="text-gray-700 hover:text-gray-900 transition-colors">About</a>
+                    <a href="gallery.html" class="text-gray-700 hover:text-gray-900 transition-colors">Gallery</a>
+                    <a href="contact.html" class="text-amber-600 font-medium">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-gray-900 p-2">
+                        <svg class="h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md">Home</a>
+                <a href="menu.html" class="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md">Menu</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md">About</a>
+                <a href="gallery.html" class="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md">Gallery</a>
+                <a href="contact.html" class="block px-3 py-2 text-amber-600 hover:bg-gray-50 rounded-md">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 animate-fade-in-up">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">Contact Us</h1>
+                <p class="text-lg text-gray-600">We'd love to hear from you. Stop by, call us, or send us a message.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="animate-fade-in-up">
+                    <div id="contact-form-container" class="bg-white p-8 rounded-lg shadow-lg">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
+                        
+                        <form id="contact-form" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name *</label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        required
+                                        placeholder="Your name"
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+                                    >
+                                    <p class="text-red-500 text-sm mt-1 hidden" id="name-error">Name must be at least 2 characters</p>
+                                </div>
+
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        required
+                                        placeholder="your@email.com"
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+                                    >
+                                    <p class="text-red-500 text-sm mt-1 hidden" id="email-error">Please enter a valid email</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone (Optional)</label>
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    placeholder="Your phone number"
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+                                >
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    required
+                                    placeholder="Tell us how we can help you..."
+                                    rows="5"
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+                                ></textarea>
+                                <p class="text-red-500 text-sm mt-1 hidden" id="message-error">Message must be at least 10 characters</p>
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="w-full bg-amber-600 hover:bg-amber-700 text-white font-medium py-2 px-4 rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                id="submit-btn"
+                            >
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="space-y-8 animate-fade-in-up">
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">Visit Us</h2>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-2">📍 Address</h3>
+                                <p class="text-gray-600">
+                                    123 Coffee Street<br>
+                                    Cafe City, CC 12345<br>
+                                    United States
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-2">📞 Phone</h3>
+                                <p class="text-gray-600">(555) 123-4567</p>
+                            </div>
+
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-2">📧 Email</h3>
+                                <p class="text-gray-600">hello@cafebar.com</p>
+                            </div>
+
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-2">🕐 Opening Hours</h3>
+                                <div class="text-gray-600">
+                                    <p>Monday - Friday: 7:00 AM - 8:00 PM</p>
+                                    <p>Saturday: 8:00 AM - 9:00 PM</p>
+                                    <p>Sunday: 8:00 AM - 6:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">Find Us</h2>
+                        <div class="aspect-video bg-gray-200 rounded-lg flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">🗺️</div>
+                                <p class="text-gray-600">Google Maps</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="/public/logo-icon.svg" alt="Cafe Bar" class="h-6 w-6">
+                        <h3 class="text-xl font-bold text-white">Cafe Bar</h3>
+                    </div>
+                    <p class="text-gray-400">Your favorite place for coffee and good vibes.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="menu.html" class="text-gray-400 hover:text-white transition-colors">Menu</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-white transition-colors">Gallery</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Opening Hours</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Monday - Friday: 7:00 AM - 8:00 PM</li>
+                        <li>Saturday: 8:00 AM - 9:00 PM</li>
+                        <li>Sunday: 8:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Cafe Bar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Contact form validation and submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Reset error messages
+            document.querySelectorAll('.text-red-500').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('input, textarea').forEach(el => el.classList.remove('border-red-500'));
+            
+            // Get form data
+            const formData = new FormData(e.target);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                message: formData.get('message')
+            };
+            
+            // Validate form
+            let isValid = true;
+            
+            if (data.name.length < 2) {
+                document.getElementById('name-error').classList.remove('hidden');
+                document.getElementById('name').classList.add('border-red-500');
+                isValid = false;
+            }
+            
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                document.getElementById('email-error').classList.remove('hidden');
+                document.getElementById('email').classList.add('border-red-500');
+                isValid = false;
+            }
+            
+            if (data.message.length < 10) {
+                document.getElementById('message-error').classList.remove('hidden');
+                document.getElementById('message').classList.add('border-red-500');
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // Show loading state
+                const submitBtn = document.getElementById('submit-btn');
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+                
+                // Simulate form submission (replace with actual submission)
+                setTimeout(() => {
+                    // Show success message
+                    document.getElementById('contact-form-container').innerHTML = `
+                        <div class="text-center py-12 px-8 bg-green-50 rounded-lg">
+                            <div class="text-4xl mb-4">✅</div>
+                            <h3 class="text-xl font-semibold text-green-900 mb-2">Thank you for your message!</h3>
+                            <p class="text-green-700">We'll get back to you as soon as possible.</p>
+                        </div>
+                    `;
+                    
+                    // Log form data (replace with actual submission)
+                    console.log('Form submitted:', data);
+                }, 1500);
+            }
+        });
+    </script>
+</body>
+</html>
