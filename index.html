@@ -8,9 +8,9 @@
     <meta name="keywords" content="coffee, cafe, restaurant, food, drinks, espresso, latte">
     <meta name="author" content="Cafe Bar">
     <link rel="canonical" href="https://cafe-bar.com" />
-    <link rel="icon" href="/public/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/public/logo-icon.svg" />
-    <link rel="shortcut icon" href="/public/favicon.ico" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="logo-icon.svg" />
+    <link rel="shortcut icon" href="favicon.ico" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom animations */
@@ -35,7 +35,7 @@
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <a href="index.html" class="flex items-center space-x-2">
-                        <img src="/public/logo.svg" alt="Cafe Bar" class="h-8 w-auto">
+                        <img src="logo.svg" alt="Cafe Bar" class="h-8 w-auto">
                         <span class="text-2xl font-bold text-gray-900">Cafe Bar</span>
                     </a>
                 </div>
@@ -74,7 +74,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div class="animate-fade-in-up">
                         <div class="flex justify-center mb-6">
-                            <img src="/public/logo-horizontal.svg" alt="Cafe Bar" class="h-20 w-auto">
+                            <img src="logo-horizontal.svg" alt="Cafe Bar" class="h-20 w-auto">
                         </div>
                         <h2 class="text-2xl text-gray-600 mb-6">Welcome to your favorite coffee destination</h2>
                         <p class="text-xl text-gray-600 mb-8">Experience the perfect blend of exceptional coffee, delicious food, and a warm atmosphere that feels like home.</p>
@@ -83,16 +83,29 @@
                             <a href="contact.html" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 border border-gray-300 bg-white hover:bg-gray-50 h-10 px-6 py-2">Visit Us</a>
                         </div>
                     </div>
-                    <div class="relative">
-                        <div class="relative h-96 rounded-lg overflow-hidden">
-                            <img src="/public/images/hero/cafe-interior.jpg" alt="Cafe Bar Interior" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-r from-amber-900/50 to-transparent flex items-center justify-center">
-                                <div class="text-center text-white px-4">
-                                    <h2 class="text-4xl font-bold mb-3">Welcome to Cafe Bar</h2>
-                                    <p class="text-xl">Where every cup tells a story and every visit feels like home</p>
-                                    <p class="text-lg mt-2">Exceptional coffee, warm atmosphere, great company</p>
+                        <div class="relative">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="relative h-96 rounded-lg overflow-hidden">
+                                <img src="public/images/hero/cafe-interior.jpg" alt="Cafe Bar Interior" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-r from-amber-900/50 to-transparent flex items-center justify-center">
+                                    <div class="text-center text-white px-4">
+                                        <h2 class="text-4xl font-bold mb-3">Welcome to Cafe Bar</h2>
+                                        <p class="text-xl">Where every cup tells a story and every visit feels like home</p>
+                                        <p class="text-lg mt-2">Exceptional coffee, warm atmosphere, great company</p>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="space-y-4">
+                                <div class="relative h-44 rounded-lg overflow-hidden">
+                                    <img src="public/images/hero/barista-coffee.jpg" alt="Professional Barista" class="w-full h-full object-cover">
+                                </div>
+                                <div class="relative h-44 rounded-lg overflow-hidden">
+                                    <img src="public/images/hero/coffee-beans.jpg" alt="Premium Coffee Beans" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 relative h-32 rounded-lg overflow-hidden">
+                            <img src="public/images/hero/cozy-atmosphere.jpg" alt="Cozy Cafe Atmosphere" class="w-full h-full object-cover">
                         </div>
                     </div>
                 </div>
@@ -157,7 +170,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
-                        <img src="/public/logo-icon.svg" alt="Cafe Bar" class="h-6 w-6">
+                        <img src="logo-icon.svg" alt="Cafe Bar" class="h-6 w-6">
                         <h3 class="text-xl font-bold text-white">Cafe Bar</h3>
                     </div>
                     <p class="text-gray-400">Your favorite place for coffee and good vibes.</p>

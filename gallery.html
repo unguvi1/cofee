@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - Cafe Bar</title>
     <meta name="description" content="Take a visual tour of Cafe Bar - our interior, drinks, food, and events.">
-    <link rel="icon" href="/public/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/public/logo-icon.svg" />
-    <link rel="shortcut icon" href="/public/favicon.ico" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="logo-icon.svg" />
+    <link rel="shortcut icon" href="favicon.ico" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @keyframes fadeInUp {
@@ -26,7 +26,7 @@
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <a href="index.html" class="flex items-center space-x-2">
-                        <img src="/public/logo.svg" alt="Cafe Bar" class="h-8 w-auto">
+                        <img src="logo.svg" alt="Cafe Bar" class="h-8 w-auto">
                         <span class="text-2xl font-bold text-gray-900">Cafe Bar</span>
                     </a>
                 </div>
@@ -106,7 +106,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
-                        <img src="/public/logo-icon.svg" alt="Cafe Bar" class="h-6 w-6">
+                        <img src="logo-icon.svg" alt="Cafe Bar" class="h-6 w-6">
                         <h3 class="text-xl font-bold text-white">Cafe Bar</h3>
                     </div>
                     <p class="text-gray-400">Your favorite place for coffee and good vibes.</p>
@@ -137,21 +137,14 @@
 
     <script>
         const galleryImages = [
-            { id: 1, caption: 'Modern coffee shop interior with comfortable seating', category: 'interior', image: '/public/images/gallery/interior-modern.jpg' },
-            { id: 2, caption: 'Cozy coffee shop seating area with natural lighting', category: 'interior', image: '/public/images/gallery/interior-cozy.jpg' },
-            { id: 3, caption: 'Professional barista making coffee with precision', category: 'events', image: '/public/images/gallery/barista-professional.jpg' },
-            { id: 4, caption: 'Coffee bean grinding process showing craftsmanship', category: 'drinks', image: '/public/images/gallery/coffee-process.jpg' },
-            { id: 5, caption: 'Beautiful latte art with heart design', category: 'drinks', image: '/public/images/gallery/latte-art.jpg' },
-            { id: 6, caption: 'Professional coffee equipment setup', category: 'drinks', image: '/public/images/gallery/equipment-setup.jpg' },
-            { id: 7, caption: 'Happy customers enjoying coffee and conversation', category: 'events', image: '/public/images/gallery/customers-enjoying.jpg' },
-            { id: 8, caption: 'Coffee shop exterior with outdoor seating area', category: 'interior', image: '/public/images/gallery/exterior.jpg' },
-            { id: 9, caption: 'Fresh pastries display case with variety', category: 'food', image: '/public/images/gallery/pastries-display.jpg' },
-            { id: 10, caption: 'Collection of different coffee cups and mugs', category: 'drinks', image: '/public/images/gallery/coffee-cups.jpg' },
-            { id: 11, caption: 'Morning light streaming through coffee shop windows', category: 'interior', image: '/public/images/gallery/morning-light.jpg' },
-            { id: 12, caption: 'Evening ambiance with warm lighting and candles', category: 'interior', image: '/public/images/gallery/evening-atmosphere.jpg' },
-            { id: 13, caption: 'Remote workers on laptops in coffee shop', category: 'events', image: '/public/images/gallery/remote-workers.jpg' },
-            { id: 14, caption: 'Friends meeting for coffee and conversation', category: 'events', image: '/public/images/gallery/friends-meeting.jpg' },
-            { id: 15, caption: 'Person reading book while enjoying coffee', category: 'events', image: '/public/images/gallery/reading-coffee.jpg' }
+            { id: 1, caption: 'Modern coffee shop interior with comfortable seating', category: 'interior', image: 'public/images/gallery/interior-modern.jpg' },
+            { id: 2, caption: 'Cozy coffee shop seating area with natural lighting', category: 'interior', image: 'public/images/gallery/interior-cozy.jpg' },
+            { id: 3, caption: 'Professional barista making coffee with precision', category: 'events', image: 'public/images/gallery/barista-professional.jpg' },
+            { id: 4, caption: 'Coffee bean grinding process showing craftsmanship', category: 'drinks', image: 'public/images/gallery/coffee-process.jpg' },
+            { id: 5, caption: 'Beautiful latte art with heart design', category: 'drinks', image: 'public/images/gallery/latte-art.jpg' },
+            { id: 6, caption: 'Professional coffee equipment setup', category: 'drinks', image: 'public/images/gallery/equipment-setup.jpg' },
+            { id: 7, caption: 'Happy customers enjoying coffee and conversation', category: 'events', image: 'public/images/gallery/customers-enjoying.jpg' },
+            { id: 8, caption: 'Coffee shop exterior with outdoor seating area', category: 'interior', image: 'public/images/gallery/exterior.jpg' }
         ];
 
         function renderGallery(images) {
