@@ -1,0 +1,12 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Coffee Cup Favicon -->
+  <rect width="32" height="32" fill="#8B4513" rx="4"/>
+  <path d="M8 10 L9 22 L23 22 L24 10 Z" fill="#FFF8DC" stroke="#2C1810" stroke-width="1"/>
+  <path d="M6 10 L26 10" stroke="#2C1810" stroke-width="1" stroke-linecap="round"/>
+  <path d="M22 14 Q26 14 26 17 Q26 20 22 20" fill="none" stroke="#2C1810" stroke-width="1"/>
+  
+  <!-- Steam -->
+  <path d="M12 7 Q11 5 12 3" fill="none" stroke="#FFF8DC" stroke-width="1" opacity="0.8"/>
+  <path d="M16 7 Q17 5 16 3" fill="none" stroke="#FFF8DC" stroke-width="1" opacity="0.8"/>
+  <path d="M20 7 Q19 5 20 3" fill="none" stroke="#FFF8DC" stroke-width="1" opacity="0.8"/>
+</svg>

@@ -1,0 +1,40 @@
+{
+  "hero": [
+    "cafe-interior.jpg",
+    "barista-coffee.jpg",
+    "coffee-beans.jpg",
+    "cozy-atmosphere.jpg"
+  ],
+  "menu": [
+    "espresso.jpg",
+    "cappuccino.jpg",
+    "latte.jpg",
+    "green-tea.jpg",
+    "sandwich.jpg",
+    "chocolate-cake.jpg",
+    "croissant.jpg",
+    "iced-coffee.jpg",
+    "coffee-beans-closeup.jpg",
+    "muffin.jpg"
+  ],
+  "gallery": [
+    "interior-1.jpg",
+    "interior-2.jpg",
+    "barista-1.jpg",
+    "coffee-process.jpg",
+    "latte-art.jpg",
+    "coffee-setup.jpg",
+    "customers.jpg",
+    "exterior.jpg",
+    "pastries.jpg",
+    "coffee-cups.jpg",
+    "morning-light.jpg",
+    "latte-art-2.jpg"
+  ],
+  "about": [
+    "owner.jpg",
+    "barista.jpg",
+    "chef.jpg",
+    "team.jpg"
+  ]
+}
